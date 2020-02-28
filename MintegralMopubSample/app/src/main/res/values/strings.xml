@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">MintegralMopubDemo</string>
+    <string name="native_ad_normal">native_ad_normal</string>
+
+    <string name="native_ad_listview">native_ad_listview</string>
+    <string name="title_activity_native_ad_list_view">NativeAdListViewActivity</string>
+    <string name="title">ad_title</string>
+    <string name="context">ad_context</string>
+</resources>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/native_ad_icon_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/ic_launcher" />
+
+        <TextView
+            android:id="@+id/native_ad_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/native_ad_main_image"
+            android:layout_toRightOf="@+id/native_ad_icon_image"
+            android:text="@string/title" />
+
+        <TextView
+            android:id="@+id/native_ad_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/native_ad_title"
+            android:layout_toRightOf="@+id/native_ad_icon_image"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:text="@string/context" />
+
+        <ImageView
+            android:id="@+id/native_ad_privacy_information_icon_image"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@null"
+            android:padding="10dp" />
+
+        <com.mintegral.msdk.widget.MTGAdChoice
+            android:id="@+id/mintegral_mediaview_adchoice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="8dp"/>
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/mediaview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="#ff0000"
+        android:orientation="vertical"
+        android:visibility="visible" >
+    </ImageView>
+
+    <Button
+        android:id="@+id/native_ad_cta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_horizontal"
+        android:text="cta" />
+</LinearLayout>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+    <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView android:id="@+id/native_ad_main_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@mipmap/ic_launcher"/>
+    <ImageView android:id="@+id/native_ad_icon_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@mipmap/ic_launcher"
+        android:layout_below="@+id/native_ad_main_image"
+        />
+    <TextView android:id="@+id/native_ad_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/title"
+        android:layout_toRightOf="@+id/native_ad_icon_image"
+        android:layout_below="@+id/native_ad_main_image" />
+    <TextView android:id="@+id/native_ad_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/native_ad_title"
+        android:text="@string/context"
+        android:layout_toRightOf="@+id/native_ad_icon_image"/>
+    <ImageView android:id="@+id/native_ad_privacy_information_icon_image"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:padding="10dp"
+        android:background="@null"
+        />
+
+        <Button
+            android:text="cta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:gravity="center_horizontal"
+
+            android:id="@+id/native_ad_cta" />
+    </RelativeLayout>
+</RelativeLayout>
