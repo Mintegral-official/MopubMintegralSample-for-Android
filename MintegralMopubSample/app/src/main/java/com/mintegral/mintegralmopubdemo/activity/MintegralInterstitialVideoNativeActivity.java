@@ -21,11 +21,19 @@ public class MintegralInterstitialVideoNativeActivity extends Activity implement
     private MoPubInterstitial mMoPubInterstitial;
     Button interstitialLoadBtn,interstitialShowBtn;
     String mopubAdUnitId = "dcc8d27a742b4df48fc99236e784cb18";
+    String TAG = MintegralInterstitialVideoNativeActivity.class.getSimpleName();
 
     @Override
     protected void onCreate( Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.interstitial_activity);
+
+        mopubAdUnitId = getResources().getString(R.string.interstitial_placementid);
+
+        if (mopubAdUnitId.equals("your interstitial  unit id of mopub")){
+            Log.e(TAG, "please input your interstitial  unit id of mopub in res/values/string.xml " );
+            return;
+        }
 
 
         mMoPubInterstitial = new MoPubInterstitial(this, mopubAdUnitId);

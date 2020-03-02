@@ -31,7 +31,8 @@ public class MainActivity extends Activity implements OnClickListener{
 
 
     Button btn_reward_ad, btn_native_listview,btn_native_normal,interstitialBtn,load_native_video,interstitialRewardBtn,load_normal_banner;
-    private String YOUR_AD_UNIT_ID = "44eaf01c3cee4972a6edb7e87c6d5535";
+//    private String YOUR_AD_UNIT_ID = "44eaf01c3cee4972a6edb7e87c6d5535";
+    private String YOUR_AD_UNIT_ID = "";
     private String TAG = "MainActivity";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +57,13 @@ public class MainActivity extends Activity implements OnClickListener{
 
         load_native_video = (Button) findViewById(R.id.load_native_video);
         load_native_video.setOnClickListener(this);
+
+        YOUR_AD_UNIT_ID = getResources().getString(R.string.init_placementid);
+
+        if (YOUR_AD_UNIT_ID.equals("any one unit id of mopub")){
+            Log.e(TAG, "please input your any one  unit id of mopub in res/values/string.xml " );
+            return;
+        }
 
 
         final SdkConfiguration.Builder configBuilder = new SdkConfiguration.Builder(YOUR_AD_UNIT_ID);

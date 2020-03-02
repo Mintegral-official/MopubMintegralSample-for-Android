@@ -20,11 +20,13 @@ import java.util.EnumSet;
 public class MintegralNativeActivity extends Activity implements MoPubNative.MoPubNativeNetworkListener{
 
 //    MoPubAdAdapter mAdapter;
-    private static final String MY_AD_UNIT_ID = "5aa3a9a89bb04a78abce20291f9ab8fe";
+    private static  String MY_AD_UNIT_ID = "5aa3a9a89bb04a78abce20291f9ab8fe";
     RequestParameters myRequestParameters;
 
     MoPubNative moPubNative;
     ViewGroup mContainer;
+    String TAG = MintegralNativeActivity.class.getSimpleName();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,7 +45,12 @@ public class MintegralNativeActivity extends Activity implements MoPubNative.MoP
 //                .mainImageId(R.id.mediaview)
 //                .build();
 
+        MY_AD_UNIT_ID = getResources().getString(R.string.native_placementid);
 
+        if (MY_AD_UNIT_ID.equals("your native  unit id of mopub")){
+            Log.e(TAG, "please input your native  unit id of mopub in res/values/string.xml " );
+            return;
+        }
 
 
         final MintegralAdRenderer adRenderer = new MintegralAdRenderer(new MintegralAdRenderer.MintegralViewBinder.Builder(R.layout.native_video_item)

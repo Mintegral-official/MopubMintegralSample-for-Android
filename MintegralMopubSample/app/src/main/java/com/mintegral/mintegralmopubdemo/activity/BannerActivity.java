@@ -15,14 +15,22 @@ public class BannerActivity extends Activity implements MoPubView.BannerAdListen
 
     private MoPubView moPubView;
     private final String TAG = "BannerActivity";
+    private String bannerId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_banner);
 
+        bannerId = getResources().getString(R.string.banner_placementid);
+
+        if (bannerId.equals("your banner  unit id of mopub")){
+            Log.e(TAG, "please input your banner  unit id of mopub in res/values/string.xml " );
+            return;
+        }
+
         moPubView = (MoPubView) findViewById(R.id.banner_mopubview);
-        moPubView.setAdUnitId("6fcc10326467485fb4a282d5f504a629"); // Enter your Ad Unit ID from www.mopub.com
+        moPubView.setAdUnitId(bannerId); // Enter your Ad Unit ID from www.mopub.com
 //        moPubView.setAdSize(MoPubView.MoPubAdSize.HEIGHT_50); // Call this if you are not setting the ad size in XML or wish to use an ad size other than what has been set in the XML. Note that multiple calls to `setAdSize()` will override one another, and the MoPub SDK only considers the most recent one.
         moPubView.setBannerAdListener(this);
 

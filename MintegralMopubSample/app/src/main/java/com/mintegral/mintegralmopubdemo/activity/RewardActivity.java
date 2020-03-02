@@ -29,6 +29,7 @@ public class RewardActivity extends Activity implements View.OnClickListener{
     private String YOUR_CUSTOM_ID = "your custom Id";
 
     private MoPubRewardedVideoListener rewardedVideoListener;
+    String TAG = RewardActivity.class.getSimpleName();
 
     @Override
     public void onClick(View v) {
@@ -61,6 +62,13 @@ public class RewardActivity extends Activity implements View.OnClickListener{
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reward);
+
+        YOUR_AD_UNIT_ID = getResources().getString(R.string.banner_placementid);
+
+        if (YOUR_AD_UNIT_ID.equals("your reward  unit id of mopub")){
+            Log.e(TAG, "please input your reward  unit id of mopub in res/values/string.xml " );
+            return;
+        }
 
 
         btn_load = (Button) findViewById(R.id.button_load);
